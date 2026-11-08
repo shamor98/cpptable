@@ -1,0 +1,362 @@
+
+/* CPP RESIDENT MANAGEMENT SYSTEM */
+/* Dashboard Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f6fb;
+    color: #17253d;
+}
+
+/* TOP HEADER */
+
+.topbar {
+    background: linear-gradient(90deg, #0759aa, #06366e);
+    color: white;
+    min-height: 75px;
+    padding: 18px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.topbar h1 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.user-info {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* MAIN APPLICATION LAYOUT */
+
+.app-container {
+    display: flex;
+    min-height: calc(100vh - 75px);
+}
+
+/* LEFT SIDEBAR */
+
+.sidebar {
+    width: 245px;
+    flex-shrink: 0;
+    background: #ffffff;
+    border-right: 1px solid #dce4ee;
+    padding: 25px 14px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.03);
+}
+
+.sidebar h2 {
+    font-size: 17px;
+    color: #09569e;
+    margin-bottom: 25px;
+    padding-left: 12px;
+}
+
+.sidebar button {
+    display: block;
+    width: 100%;
+    padding: 15px 16px;
+    margin-bottom: 8px;
+    background: transparent;
+    border: none;
+    border-radius: 9px;
+    text-align: left;
+    color: #253957;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar button:hover {
+    background: #e9f2ff;
+    color: #0759aa;
+}
+
+.sidebar button.active {
+    background: #0759c8;
+    color: white;
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 30px;
+}
+
+.page h2 {
+    font-size: 29px;
+    margin-bottom: 8px;
+    color: #13223a;
+}
+
+.page > p {
+    margin-bottom: 25px;
+    color: #65758b;
+    font-size: 15px;
+}
+
+/* HIDE INACTIVE TABS */
+
+.page[hidden] {
+    display: none !important;
+}
+
+/* DASHBOARD SUMMARY CARDS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #dce5f0;
+    border-left: 5px solid #0879e8;
+    box-shadow: 0 3px 10px rgba(20, 50, 90, 0.06);
+}
+
+.stat-card:nth-child(2) {
+    border-left-color: #25b9db;
+}
+
+.stat-card:nth-child(3) {
+    border-left-color: #9567ee;
+}
+
+.stat-card:nth-child(4) {
+    border-left-color: #16a765;
+}
+
+.stat-card h3 {
+    color: #35445c;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.stat-card p {
+    font-size: 34px;
+    font-weight: bold;
+    color: #102847;
+}
+
+/* DASHBOARD PANELS */
+
+.panel {
+    background: white;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid #dce5f0;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(20, 50, 90, 0.05);
+    overflow-x: auto;
+}
+
+.panel h3 {
+    font-size: 19px;
+    margin-bottom: 20px;
+    color: #193453;
+}
+
+.panel p {
+    padding: 10px 0;
+    border-bottom: 1px solid #edf1f6;
+    color: #36465d;
+}
+
+.panel p:last-child {
+    border-bottom: none;
+}
+
+/* TABLE DESIGN */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 12px;
+}
+
+th {
+    background: #eaf2fb;
+    color: #18385e;
+    text-align: left;
+    padding: 14px;
+    font-size: 14px;
+}
+
+td {
+    padding: 14px;
+    border-bottom: 1px solid #e3eaf3;
+    font-size: 14px;
+}
+
+tbody tr:hover {
+    background: #f4f9ff;
+}
+
+/* ACTION BUTTONS */
+
+.action-button {
+    background: #0759c8;
+    color: white;
+    border: none;
+    padding: 13px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.action-button:hover {
+    background: #034393;
+}
+
+/* FORM CONTROLS FOR UPCOMING FEATURES */
+
+input,
+select,
+textarea {
+    padding: 11px 12px;
+    border: 1px solid #c8d4e3;
+    border-radius: 7px;
+    font: inherit;
+    max-width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #70a9f5;
+    outline-offset: 1px;
+}
+
+/* MOBILE AND SMALL SCREEN SUPPORT */
+
+@media (max-width: 1100px) {
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .topbar h1 {
+        font-size: 20px;
+    }
+
+    .app-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 14px;
+    }
+
+    .sidebar button {
+        display: inline-block;
+        width: auto;
+        margin: 4px;
+    }
+
+    .main-content {
+        padding: 18px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .page h2 {
+        font-size: 24px;
+    }
+}
+
+/* CODE #6 - ADVANCED RESIDENT FORM */
+
+.cpp-resident-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.cpp-resident-grid label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #253957;
+}
+
+.cpp-resident-grid input,
+.cpp-resident-grid select,
+.cpp-resident-grid textarea {
+    width: 100%;
+    background: #ffffff;
+    font-weight: normal;
+}
+
+.cpp-secondary-button {
+    background: #e9eef5;
+    border: 1px solid #b9c8dc;
+    color: #213c60;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.cpp-secondary-button:hover {
+    background: #dce7f5;
+}
+
+#residentList table {
+    min-width: 1250px;
+}
+
+#residentList td {
+    white-space: nowrap;
+}
+
+#residentList td:last-child {
+    white-space: normal;
+    min-width: 145px;
+}
+
+@media (max-width: 1000px) {
+    .cpp-resident-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .cpp-resident-grid {
+        grid-template-columns: 1fr;
+    }
+}

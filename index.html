@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPP Resident Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <h1>CPP Resident Management System</h1>
+        <div class="user-info">Demo Staff Account</div>
+    </header>
+
+    <div class="app-container">
+
+        <!-- LEFT NAVIGATION -->
+        <aside class="sidebar">
+            <h2>CPP Management</h2>
+
+            <button onclick="showPage('dashboard')">
+                Dashboard
+            </button>
+
+            <button onclick="showPage('residents')">
+                Residents
+            </button>
+
+            <button onclick="showPage('appointments')">
+                Appointments
+            </button>
+
+            <button onclick="showPage('groups')">
+                Groups & Classes
+            </button>
+
+            <button onclick="showPage('reports')">
+                Reports
+            </button>
+
+            <button onclick="showPage('staff')">
+                Staff Access
+            </button>
+
+            <button onclick="showPage('settings')">
+                Settings
+            </button>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- DASHBOARD -->
+            <section id="dashboard" class="page">
+                <h2>Dashboard</h2>
+                <p>Facility overview and resident information</p>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <h3>Total Residents</h3>
+                        <p id="totalResidents">13</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Upcoming Appointments</h3>
+                        <p id="totalAppointments">4</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Court Dates</h3>
+                        <p id="totalCourtDates">2</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Active Programs</h3>
+                        <p id="totalPrograms">5</p>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>Upcoming Appointments & Court Dates</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Resident</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Appointment Type</th>
+                                <th>Transport</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Marcus Reed</td>
+                                <td>11/17/2026</td>
+                                <td>9:00 AM</td>
+                                <td>Medical Check</td>
+                                <td>Yes</td>
+                            </tr>
+
+                            <tr>
+                                <td>Jalen Brooks</td>
+                                <td>11/18/2026</td>
+                                <td>1:30 PM</td>
+                                <td>Court Review</td>
+                                <td>Yes</td>
+                            </tr>
+
+                            <tr>
+                                <td>Tyrese Coleman</td>
+                                <td>11/19/2026</td>
+                                <td>10:00 AM</td>
+                                <td>Telehealth</td>
+                                <td>No</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="panel">
+                    <h3>Program Participation</h3>
+                    <p>LifeBuild</p>
+                    <p>ART Group</p>
+                    <p>SA Group</p>
+                    <p>C-Tech</p>
+                    <p>Parks & Recreation</p>
+                </div>
+
+                <div class="panel">
+                    <h3>Alerts & Notes</h3>
+                    <p>Demo Alert: Upcoming medical appointment</p>
+                    <p>Demo Alert: Court review scheduled</p>
+                </div>
+            </section>
+
+            <!-- RESIDENTS -->
+            <section id="residents" class="page" hidden>
+                <h2>Resident Management</h2>
+                <p>Add, edit, search, and manage residents.</p>
+                <button type="button" class="action-button">
+                    Add Resident
+                </button>
+                <div id="residentList"></div>
+            </section>
+
+            <!-- APPOINTMENTS -->
+            <section id="appointments" class="page" hidden>
+                <h2>Appointments & Court Dates</h2>
+                <p>Manage appointments and transportation.</p>
+                <button type="button" class="action-button">
+                    Add Appointment
+                </button>
+            </section>
+
+            <!-- GROUPS -->
+            <section id="groups" class="page" hidden>
+                <h2>Groups & Classes</h2>
+                <p>Manage resident participation in programs.</p>
+                <div class="panel">
+                    <h3>Available Programs</h3>
+                    <p>LifeBuild</p>
+                    <p>ART Group</p>
+                    <p>SA Group</p>
+                    <p>C-Tech</p>
+                    <p>Parks & Recreation</p>
+                </div>
+            </section>
+
+            <!-- REPORTS -->
+            <section id="reports" class="page" hidden>
+                <h2>Reports</h2>
+                <p>Generate resident and scheduling reports.</p>
+                <button type="button" class="action-button">
+                    Generate Report
+                </button>
+            </section>
+
+            <!-- STAFF ACCESS -->
+            <section id="staff" class="page" hidden>
+                <h2>Staff Access</h2>
+                <p>Staff account management will go here.</p>
+                <p>Demo mode only. No real login system yet.</p>
+            </section>
+
+            <!-- SETTINGS -->
+            <section id="settings" class="page" hidden>
+                <h2>Settings</h2>
+                <p>Application settings will go here.</p>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
